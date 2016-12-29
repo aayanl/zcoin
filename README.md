@@ -1,7 +1,7 @@
 ZCoin integration/staging tree
 ================================
 
-https://zcoin.finance/
+https://zcoin.tech
 
  Copyright (c) 2009 - 2016 Bitcoin Developers
  
@@ -18,7 +18,7 @@ ZCoin is the implementation of the Zerocoin protocol ( http://zerocoin.org ) gua
  - Retarget using BRNDF every 6 blocks
 
 For more information, as well as an immediately useable, binary version of
-the zcoin client sofware, see https://github.com/ZCoinOfficial/zcoin/releases.
+the zcoin client sofware, see https://github.com/zcoinproject/zcoin/releases.
 
 License
 -------
@@ -37,7 +37,7 @@ development team members simply pulls it.
 
 If it is a *more complicated or potentially controversial* change, then the patch
 submitter will be asked to start a discussion (if they haven't already) on the
-[Slack : ZCoin General Channel](https://zcoinofficial.slack.com). You can get invite from here http://invite.zcoin.finance:3000/
+[Slack : ZCoin General Channel](http://162.243.153.71:3000/). You can get invite from here http://162.243.153.71:3000/
 
 The patch will be accepted if there is broad consensus that it is a good thing.
 Developers should expect to rework and resubmit patches if the code doesn't
@@ -45,7 +45,7 @@ match the project's coding conventions (see `doc/coding.txt`) or are
 controversial.
 
 The `master` branch is regularly built and tested, but is not guaranteed to be
-completely stable. [Tags](https://github.com/zcoinofficial/zcoin/tags) are created
+completely stable. [Tags](https://github.com/zcoinproject/zcoin/tags) are created
 regularly to indicate new official, stable release versions of ZCoin.
 
 Testing
