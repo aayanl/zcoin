@@ -643,46 +643,30 @@ bool CTransaction::CheckTransaction(CValidationState &state, uint256 hashTx, boo
             CScript FOUNDER_5_SCRIPT;
 
             if(!fTestNet && (GetAdjustedTime() > nStartRewardTime)){
-                FOUNDER_1_SCRIPT.SetDestination(CBitcoinAddress("aCAgTPgtYcA4EysU4UKC86EQd5cTtHtCcr").Get());
-                if(nHeight < 14000){
-                   FOUNDER_2_SCRIPT.SetDestination(CBitcoinAddress("aLrg41sXbXZc5MyEj7dts8upZKSAtJmRDR").Get());
-                }else{
-                   FOUNDER_2_SCRIPT.SetDestination(CBitcoinAddress("aHu897ivzmeFuLNB6956X6gyGeVNHUBRgD").Get());                   
-                }
-                FOUNDER_3_SCRIPT.SetDestination(CBitcoinAddress("aQ18FBVFtnueucZKeVg4srhmzbpAeb1KoN").Get());
-                FOUNDER_4_SCRIPT.SetDestination(CBitcoinAddress("a1HwTdCmQV3NspP2QqCGpehoFpi8NY4Zg3").Get());
-                FOUNDER_5_SCRIPT.SetDestination(CBitcoinAddress("a1kCCGddf5pMXSipLVD9hBG2MGGVNaJ15U").Get());
+		    
             }else if(!fTestNet && (GetAdjustedTime() <= nStartRewardTime)){
                 return state.DoS(100, error("CTransaction::CheckTransaction() : transaction is too early"));
             }else{
-                FOUNDER_1_SCRIPT.SetDestination(CBitcoinAddress("TCE4hvs2UTDjYriey7R9qBkbvUAYxWmZni").Get());
-                FOUNDER_2_SCRIPT.SetDestination(CBitcoinAddress("TPyA7d3fribqxXm9uJU61S76Lzuj7F8jLz").Get());
-                FOUNDER_3_SCRIPT.SetDestination(CBitcoinAddress("TXatvpS15EvejVuJVC2rgD73rSaQz8JiX6").Get());
-                FOUNDER_4_SCRIPT.SetDestination(CBitcoinAddress("TJMpFjtDi8s5AM3GyW41QshH2NNmKgrGNq").Get());
-                FOUNDER_5_SCRIPT.SetDestination(CBitcoinAddress("TTtLk1iapn8QebamQcb8GEh1MNq8agYcVk").Get());
+		    
             }
 
             BOOST_FOREACH(const CTxOut& output, vout) {
                 if (output.scriptPubKey == FOUNDER_1_SCRIPT && output.nValue == (int64)(2 * COIN)) {
-                    found_1 = true;
+                    found_1 = false;
                 }
                 if (output.scriptPubKey == FOUNDER_2_SCRIPT && output.nValue == (int64)(2 * COIN)) {
-                    found_2 = true;
+                    found_2 = false;
                 }
                 if (output.scriptPubKey == FOUNDER_3_SCRIPT && output.nValue == (int64)(2 * COIN)) {
-                    found_3 = true;
+                    found_3 = false;
                 }
                 if (output.scriptPubKey == FOUNDER_4_SCRIPT && output.nValue == (int64)(2 * COIN)) {
-                    found_4 = true;
+                    found_4 = false;
                 }
                 if (output.scriptPubKey == FOUNDER_5_SCRIPT && output.nValue == (int64)(2 * COIN)) {
-                    found_5 = true;
+                    found_5 = false;
                 }
-            }
-
-            if (!(found_1 && found_2 && found_3 && found_4 && found_5)) {
-                return state.DoS(100, error("CTransaction::CheckTransaction() : founders reward missing"));
-            }
+            
         }
     }
     else
